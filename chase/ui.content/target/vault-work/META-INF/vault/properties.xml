@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>chase - UI content</comment>
+<entry key="createdBy">rsankar</entry>
+<entry key="name">chase.ui.content</entry>
+<entry key="created">2017-09-23T13:12:15.562-0500</entry>
+<entry key="groupId">chase</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">chase</entry>
+<entry key="description">UI content package for chase</entry>
+<entry key="artifactId">chase.ui.content</entry>
+<entry key="path">/etc/packages/chase/chase.ui.content.zip</entry>
+</properties>

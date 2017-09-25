@@ -1,0 +1,7 @@
+<p data-sly-use.text="com.chase.core.models.AdvancedHtml" class="${text.cssClass}" data-emptytext="Text" data-sly-unwrap>
+<link rel="stylesheet" href="${text.allCss}" type="text/css" media="all" data-sly-test="${text.allCss}"/>
+<link rel="stylesheet" href="${text.mobileCss}" type="text/css" media="handheld" data-sly-test="${text.mobileCss}"/>
+<link rel="stylesheet" href="${text.desktopCss}" type="text/css" media="screen" data-sly-test="${text.desktopCss}"/>
+${text.text @ context='unsafe'}
+<div data-sly-test="${text.showError}" style="color:red; font-weight: bold">${text.errorMessage @ context='unsafe'}</div>
+</p>

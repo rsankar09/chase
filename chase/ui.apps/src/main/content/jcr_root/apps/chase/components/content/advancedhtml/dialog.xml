@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Text"
+    title="Text"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab1
+            jcr:primaryType="cq:Widget"
+            anchor="100%"
+            title="Text"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <text
+                    jcr:primaryType="cq:Widget"
+                    autoHeight="{Boolean}true"
+                    autoScroll="{Boolean}true"
+                    externalStyleSheets="[ /etc/everywhere/css/combined.css ]"
+                    fieldDescription="HTML code only. Must not contain script tags or style tags."
+                    fieldLabel="Insert HTML code"
+                    grow="{Boolean}true"
+                    name="./text"
+                    xtype="textarea"/>
+            </items>
+        </tab1>
+        <tab2
+            jcr:primaryType="cq:Widget"
+            anchor="100%"
+            title="JavaScript"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <inlineScript
+                    jcr:primaryType="cq:Widget"
+                    autoHeight="{Boolean}true"
+                    autoScroll="{Boolean}true"
+                    fieldDescription="Inline JavaScript for this component to be added to page JS. Must be valid JavaScript!"
+                    fieldLabel="Inline JavaScript"
+                    grow="{Boolean}true"
+                    name="./inlineScript"
+                    xtype="textarea"/>
+                <staticScripts
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Static JS files stored in DAM. Files must be uploaded into DAM 1st."
+                    fieldLabel="Static JavaScript"
+                    name="./scriptPaths"
+                    xtype="multifield">
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        rootPath="/content/dam/chase/js"
+                        xtype="pathfield"/>
+                </staticScripts>
+                <externalScripts
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Valid URLs to external JavaScript that is not hosted on AARP site. Must be valid URLs!"
+                    fieldLabel="External JavaScript"
+                    name="./externalScriptUrls"
+                    xtype="multifield">
+                    <fieldConfig
+                        jcr:primaryType="cq:Widget"
+                        regex="new RegExp('^(http(s)?://)(([da-z.-]+).([a-z.]{2,6}))((/)([A-Za-z0-9_-]+))+((.(js)){1})$')"
+                        regexText="Must be valid URLs to JavaScript file."
+                        xtype="textfield"/>
+                </externalScripts>
+                <approved
+                    jcr:primaryType="cq:Widget"
+                    ignoreData="{Boolean}true"
+                    name="./advancedHtmlApprovedFlag"
+                    value="false"
+                    xtype="hidden"/>
+                <approvedTypeHint
+                    jcr:primaryType="cq:Widget"
+                    ignoreData="{Boolean}true"
+                    name="./advancedHtmlApprovedFlag@TypeHint"
+                    value="Boolean"
+                    xtype="hidden"/>
+                <advancedHTMLRejectedReason
+                    jcr:primaryType="cq:Widget"
+                    ignoreData="{Boolean}true"
+                    name="./advancedHTMLRejectedReason"
+                    value="This component has not been reviewed."
+                    xtype="hidden"/>
+            </items>
+        </tab2>
+        <tab3
+            jcr:primaryType="cq:Widget"
+            anchor="100%"
+            title="CSS"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <mobileCss
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Mobile CSS"
+                    name="./mobileCss"
+                    rootPath="/content/dam/chase/css"
+                    showTitlesInTree="{Boolean}true"
+                    xtype="pathfield"/>
+                <desktopCss
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Desktop CSS"
+                    name="./desktopCss"
+                    rootPath="/content/dam/chase/css"
+                    showTitlesInTree="{Boolean}true"
+                    xtype="pathfield"/>
+                <allCss
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="All Media CSS"
+                    name="./allCss"
+                    rootPath="/content/dam/chase/css"
+                    showTitlesInTree="{Boolean}true"
+                    xtype="pathfield"/>
+            </items>
+        </tab3>
+    </items>
+</jcr:root>
